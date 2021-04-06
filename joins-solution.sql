@@ -4,10 +4,15 @@ FROM customers
 JOIN addresses ON addresses.customer_id = customers.id;
 
 -- 2. Get all orders and their line items (orders, quantity and product).
-
+SELECT *
+FROM orders
+JOIN line_items ON orders.id = line_items.order_id;
 
 -- 3. Which warehouses have cheetos?
-
+SELECT *
+FROM warehouse_product
+WHERE product_id = 5
+JOIN warehouse ON warehouse.id = warehouse_product.warehouse_id;
 
 -- 4. Which warehouses have diet pepsi?
 
